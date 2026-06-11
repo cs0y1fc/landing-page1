@@ -213,28 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', initParticles);
   }
 
-  // --- CUSTOM CURSOR DOT ---
-  const cursorDot = document.querySelector('.custom-cursor-dot');
-
-  if (cursorDot && !prefersReducedMotion) {
-    window.addEventListener('mousemove', (e) => {
-      // Dot follows cursor coordinates directly
-      cursorDot.style.left = `${e.clientX}px`;
-      cursorDot.style.top = `${e.clientY}px`;
-    });
-
-    // Hover effect expansions
-    const interactiveElements = document.querySelectorAll('a, button, input, textarea, .qr-btn, .sug-btn');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-
-    // Click shrink effect
-    window.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
-    window.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
-  }
-
   // --- PERSPECTIVE 3D CARD TILT ---
   const cards = document.querySelectorAll('.dash-card');
   cards.forEach(card => {
@@ -320,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const words = segment.split(/(\s+)/);
         words.forEach(word => {
           if (word.trim()) {
-            result += `<span class="word-reveal" style="animation-delay: ${0.35 + wordIndex * 0.07}s">${word}</span>`;
+            result += `<span class="word-reveal" style="animation-delay: ${0.15 + wordIndex * 0.04}s">${word}</span>`;
             wordIndex++;
           } else {
             result += word;
@@ -388,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetWidth = fill.parentElement.previousElementSibling.querySelector('.skill-val').textContent;
       fill.style.width = targetWidth;
     });
-  }, 800);
+  }, 400);
 
   // --- STATS COUNTER ANIMATION ---
   function animateCounters() {
@@ -401,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = parseInt(match[1]);
       const suffix = text.replace(/\d+/, '');
       let startTime = null;
-      const duration = 2200;
+      const duration = 1200;
       
       function update(timestamp) {
         if (!startTime) startTime = timestamp;
@@ -417,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   if (!prefersReducedMotion) {
-    setTimeout(animateCounters, 600);
+    setTimeout(animateCounters, 300);
   }
 
   // --- BILINGUAL TERMINAL SIMULATOR ---
@@ -661,7 +639,7 @@ Interactive portal updated to Ignasi Gimeno! Fully responsive.`;
     const typing = showBotTyping();
 
     // Random typewriter response delay
-    const delay = 700 + Math.random() * 800;
+    const delay = 400 + Math.random() * 400;
     setTimeout(() => {
       if (typing) typing.remove();
       const reply = getBotReply(text);
@@ -703,6 +681,6 @@ Interactive portal updated to Ignasi Gimeno! Fully responsive.`;
   if (chatBody) {
     setTimeout(() => {
       appendChatMessage('bot', botResponses[currentLanguage].hola);
-    }, 1200);
+    }, 600);
   }
 });
