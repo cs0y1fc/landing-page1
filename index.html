@@ -1,482 +1,218 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ignasi Gimeno | Desarrollador Full-Stack & Integrador de IA</title>
-  <meta name="description" content="Portfolio de Ignasi Gimeno, Desarrollador Web Full-Stack especialista en integrar Inteligencia Artificial (OpenAI, Gemini, RAG) en aplicaciones web modernas y eficientes." />
+  <title>Ignasi Gimeno | Full-Stack &amp; AI Engineer</title>
+  <meta name="description" content="Interactive dashboard portfolio of Ignasi Gimeno, Full-Stack developer focusing on Python backend integrations with SQL databases and AI systems." />
   
-  <!-- Favicon Mock -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
   
-  <!-- FontAwesome Icons & Stylesheets -->
+  <!-- Icons & CSS Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Ambient Glow Blobs -->
-  <div class="glow-blob blob-1"></div>
-  <div class="glow-blob blob-2"></div>
-  <div class="glow-blob blob-3"></div>
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
 
-  <!-- Header Navigation -->
+  <!-- Interactive Floating Background Particles -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Top Navigation & Configuration Bar -->
   <header>
-    <div class="nav-container">
-      <a href="#home" class="logo">
-        <span class="logo-icon">&lt;/&gt;</span>
-        <span>Ignasi.Gimeno</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#terminal">Terminal</a></li>
-        <li><a href="#chatbot">Asistente IA</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="#contact" class="btn btn-secondary">Hablemos</a>
+    <a href="#" class="logo">
+      <span class="logo-icon">&lt;/&gt;</span>
+      <span>Ignasi.Gimeno</span>
+    </a>
+    <div class="controls-bar">
+      <!-- Language Tabs Slider Toggler -->
+      <div class="lang-toggle" id="lang-toggle-slider">
+        <div class="lang-slider"></div>
+        <button class="lang-btn active" data-lang="en" aria-label="English Language">EN</button>
+        <button class="lang-btn" data-lang="es" aria-label="Idioma Español">ES</button>
+        <button class="lang-btn" data-lang="ca" aria-label="Idioma Català">CA</button>
       </div>
+      <!-- Dark/Light Theme Button Switcher -->
+      <button class="theme-btn" id="theme-toggle-btn" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="ping"></span>
-          Disponible para nuevos proyectos
-        </div>
-        <h1>
-          Impulsando el futuro web con <br />
-          <span class="grad-text">Inteligencia Artificial</span>
-        </h1>
-        <p class="lead">
-          Hola, soy Ignasi Gimeno. Desarrollador Full-Stack enfocado en diseñar y construir experiencias web de alta gama e integrar soluciones cognitivas con Modelos de Lenguaje (LLMs) de última generación.
-        </p>
-        <div class="hero-actions">
-          <a href="#chatbot" class="btn btn-primary">
-            <i class="fa-solid fa-robot"></i> Chatear con IA
-          </a>
-          <a href="#projects" class="btn btn-secondary">
-            <i class="fa-solid fa-code"></i> Ver Proyectos
-          </a>
-        </div>
-        <div class="hero-metrics">
-          <div class="metric-item">
-            <span class="metric-val">15+</span>
-            <span class="metric-label">Proyectos</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-val">4+</span>
-            <span class="metric-label">Años Exp.</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-val">99%</span>
-            <span class="metric-label">Éxito en Entregas</span>
-          </div>
-        </div>
-      </div>
+  <!-- Dashboard Main Layout Wrapper -->
+  <main class="dashboard-wrapper">
+    <div class="dashboard-grid">
       
-      <div class="hero-visual">
-        <div class="interactive-mockup">
-          <div class="mockup-ring-1"></div>
-          <div class="mockup-ring-2"></div>
-          <div class="mockup-sphere"></div>
-          <div class="float-card fc-1 glass-card">
-            <i class="fa-brands fa-react" style="color: #61dbfb; font-size: 1.4rem;"></i>
-            <span>React &amp; Next.js</span>
-          </div>
-          <div class="float-card fc-2 glass-card">
-            <i class="fa-solid fa-brain" style="color: var(--secondary); font-size: 1.4rem;"></i>
-            <span>Gemini &amp; OpenAI</span>
+      <!-- HERO BIOGRAPHY CARD -->
+      <section class="dash-card card-hero">
+        <div class="card-glow"></div>
+        <div class="layer-3d">
+          <span class="hero-tag" data-i18n="hero-tag">Full-Stack Developer | Python &amp; SQL</span>
+          <h1 data-i18n="hero-title">Crafting High-Performance Web Apps with <span class="grad-text">Advanced AI</span></h1>
+          <p data-i18n="hero-desc">
+            I am Ignasi Gimeno. A Full-Stack Engineer specialized in developing high-speed web platforms, integrating neural agents, and building robust Python backend pipelines with SQL databases.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('chat-input').focus();">
+              <i class="fa-solid fa-robot"></i> <span data-i18n="btn-chat">Chat with AI</span>
+            </button>
+            <button class="btn btn-secondary" onclick="document.getElementById('terminal-input').focus();">
+              <i class="fa-solid fa-terminal"></i> <span data-i18n="btn-projects">Try Terminal</span>
+            </button>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- About / Terminal Section -->
-  <section id="terminal">
-    <div class="container terminal-grid">
-      <div class="about-text">
-        <div class="hero-badge" style="margin-bottom: 16px;">
-          <i class="fa-solid fa-terminal"></i> Consola Interactiva
+      <!-- METRICS & NUMBERS CARD -->
+      <section class="dash-card card-stats">
+        <div class="layer-3d" style="width: 100%; display: flex; justify-content: space-around;">
+          <div class="stat-box">
+            <div class="stat-num">15+</div>
+            <div class="stat-label" data-i18n="stat-proj-lbl">Projects Done</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">4+</div>
+            <div class="stat-label" data-i18n="stat-exp-lbl">Years Exp.</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">99%</div>
+            <div class="stat-label" data-i18n="stat-success-lbl">Success Rate</div>
+          </div>
         </div>
-        <h3>Explora mi perfil mediante comandos de terminal</h3>
-        <p>
-          Si tienes alma de desarrollador, diseñador o entusiasta técnico, he preparado una terminal interactiva para que explores mis habilidades, proyectos y datos de contacto como si estuvieras en tu propia consola de Unix.
-        </p>
-        <p>
-          Prueba escribiendo comandos sencillos como <span class="terminal-prompt" style="font-family: var(--font-mono); font-weight:600">help</span> para desplegar el menú de opciones y descubrir datos interesantes.
-        </p>
-      </div>
+      </section>
 
-      <div class="terminal-window">
-        <div class="terminal-header">
-          <span class="terminal-dot dot-red"></span>
-          <span class="terminal-dot dot-yellow"></span>
-          <span class="terminal-dot dot-green"></span>
-          <span class="terminal-title">guest@ignasi-gimeno: ~ (bash)</span>
-        </div>
-        <div class="terminal-body" id="terminal-body">
-          <div class="terminal-line">Consola de Ignasi Gimeno (Versión 1.2.0-stable)</div>
-          <div class="terminal-line">Escribe <span class="terminal-prompt">help</span> para obtener una lista de comandos disponibles.</div>
-          <div class="terminal-line">guest@portfolio:~$ help</div>
-          <div class="terminal-line">Comandos disponibles:
-  - <span class="terminal-prompt">about</span>     : Breve descripción de mi perfil.
-  - <span class="terminal-prompt">skills</span>    : Listado detallado de stack tecnológico.
-  - <span class="terminal-prompt">projects</span>  : Proyectos destacados en desarrollo.
-  - <span class="terminal-prompt">contact</span>   : Información de contacto y redes.
-  - <span class="terminal-prompt">clear</span>     : Limpiar la pantalla de la terminal.
-  - <span class="terminal-prompt">secret</span>    : Revela un huevo de pascua especial.</div>
-          <!-- Line to append logs -->
-        </div>
-        <div class="terminal-header" style="background: rgba(10, 14, 26, 0.95); padding: 0 20px 20px; border-top: none;">
-          <div class="terminal-input-line" style="width: 100%;">
-            <span class="terminal-prompt">guest@portfolio:~$</span>
-            <input type="text" id="terminal-input" placeholder="escribe aquí..." autofocus autocomplete="off" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Chatbot Integration Section -->
-  <section id="chatbot">
-    <div class="container ai-section-grid">
-      <div class="ai-info-card glass-card">
-        <div class="hero-badge" style="margin-bottom: 16px;">
-          <i class="fa-solid fa-robot"></i> Clon Virtual de IA
-        </div>
-        <h3>Asistente de IA Integrado</h3>
-        <p>
-          He entrenado un clon conversacional basado en mis experiencias profesionales para responder preguntas directamente sobre mis habilidades técnicas, disponibilidad horaria o tarifas de desarrollo.
-        </p>
-        <p>
-          Este asistente demuestra cómo la inteligencia artificial conversacional puede integrarse perfectamente en el frontend para enriquecer la experiencia de usuario final.
-        </p>
-        <ul class="ai-feature-list">
-          <li class="ai-feature-item">
-            <div class="ai-feature-icon"><i class="fa-solid fa-bolt"></i></div>
-            <div class="ai-feature-text">
-              <h4>Respuestas Instantáneas</h4>
-              <p>Procesamiento rápido directamente en la interfaz del cliente.</p>
-            </div>
-          </li>
-          <li class="ai-feature-item">
-            <div class="ai-feature-icon"><i class="fa-solid fa-comments"></i></div>
-            <div class="ai-feature-text">
-              <h4>Sugerencias Rápidas</h4>
-              <p>Botones de interacción rápida para flujos comunes.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="chat-window">
-        <div class="chat-header">
-          <div class="chat-agent">
-            <div class="chat-avatar">
-              AI
-              <span class="chat-status"></span>
-            </div>
-            <div class="chat-name-container">
-              <span class="chat-name">Ignasi AI Assistant</span>
-              <span class="chat-tagline"><i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i> En línea y listo</span>
-            </div>
-          </div>
-          <i class="fa-solid fa-robot" style="color: var(--secondary); font-size: 1.25rem;"></i>
-        </div>
-        <div class="chat-body" id="chat-body">
-          <!-- Messages will load dynamically -->
-        </div>
-        <div class="quick-replies">
-          <button class="qr-btn">Proyectos</button>
-          <button class="qr-btn">Stack Tecnológico</button>
-          <button class="qr-btn">Contacto</button>
-          <button class="qr-btn">Contratar</button>
-        </div>
-        <div class="chat-input-area">
-          <input type="text" id="chat-input" placeholder="Pregúntame sobre Ignasi..." autocomplete="off" />
-          <button id="chat-send-btn" class="btn btn-primary btn-icon-only">
-            <i class="fa-solid fa-paper-plane" style="color: #05060e;"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <div class="projects-header">
-        <div class="projects-intro">
-          <div class="hero-badge" style="margin-bottom: 16px;">
-            <i class="fa-solid fa-diagram-project"></i> Portafolio
-          </div>
-          <h2 class="section-title">Proyectos Destacados</h2>
-          <p class="section-subtitle">Una muestra de desarrollos full-stack que combinan robustez, interfaces premium e integraciones de IA avanzadas.</p>
-        </div>
-        <ul class="project-filters">
-          <li><button class="filter-btn active" data-filter="all">Todos</button></li>
-          <li><button class="filter-btn" data-filter="ai">IA Integración</button></li>
-          <li><button class="filter-btn" data-filter="fullstack">Full-Stack</button></li>
-        </ul>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1: DocuMind AI -->
-        <div class="project-card glass-card" data-category="ai">
-          <div class="project-image">
-            <div class="project-glow-overlay"></div>
-            <div class="project-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag"><u>Python &amp; SQL</u></span>
-              <span class="project-tag">Pinecone</span>
-            </div>
-            <!-- Dynamic representation of visual rather than a blank image -->
-            <div style="width:100%; height:100%; background: linear-gradient(135deg, #1e1b4b, #311042); display:grid; place-items:center;">
-              <i class="fa-solid fa-file-pdf" style="font-size: 3.5rem; color: var(--accent); opacity: 0.85;"></i>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>DocuMind AI</h3>
-            <p>
-              Aplicación de RAG (Generación Aumentada por Recuperación) que permite a los usuarios subir documentos corporativos y entablar chats de contexto profundo utilizando embeddings y bases de datos vectoriales. Cuenta con una robusta <u>integración de Python con bases de datos SQL relacionales (PostgreSQL)</u> para guardar el historial y análisis estructurados.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo en Vivo</a>
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: SaaS Multi-Model Chat -->
-        <div class="project-card glass-card" data-category="fullstack">
-          <div class="project-image">
-            <div class="project-glow-overlay"></div>
-            <div class="project-tags">
-              <span class="project-tag">Next.js</span>
-              <span class="project-tag">Node.js</span>
-              <span class="project-tag">PostgreSQL</span>
-            </div>
-            <div style="width:100%; height:100%; background: linear-gradient(135deg, #022c22, #083344); display:grid; place-items:center;">
-              <i class="fa-solid fa-comments" style="font-size: 3.5rem; color: var(--secondary); opacity: 0.85;"></i>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>SaaS Chat AI Hub</h3>
-            <p>
-              Consola unificada que permite a empresas configurar y utilizar simultáneamente modelos de OpenAI, Anthropic y Gemini bajo un modelo de suscripción, con analíticas integradas y control de tokens consumidos.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo en Vivo</a>
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: NeuroMarket -->
-        <div class="project-card glass-card" data-category="fullstack">
-          <div class="project-image">
-            <div class="project-glow-overlay"></div>
-            <div class="project-tags">
-              <span class="project-tag">Vue 3</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Redis</span>
-            </div>
-            <div style="width:100%; height:100%; background: linear-gradient(135deg, #1c1917, #450a0a); display:grid; place-items:center;">
-              <i class="fa-solid fa-cart-shopping" style="font-size: 3.5rem; color: #f43f5e; opacity: 0.85;"></i>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>NeuroMarket</h3>
-            <p>
-              Plataforma de comercio electrónico de alto rendimiento con recomendador predictivo en tiempo real basado en el comportamiento de navegación e historial del usuario.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo en Vivo</a>
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <div class="hero-badge" style="margin: 0 auto 16px; display: table;">
-        <i class="fa-solid fa-gears"></i> Conocimientos
-      </div>
-      <h2 class="section-title">Habilidades Técnicas</h2>
-      <p class="section-subtitle">Mi arsenal de desarrollo y herramientas optimizado para crear productos modernos.</p>
-      
-      <div class="skills-grid">
-        <!-- Frontend -->
-        <div class="skills-category glass-card">
-          <h3><i class="fa-solid fa-laptop-code"></i> Frontend Development</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">React / Next.js</span>
-                <span class="skill-val">90%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">TypeScript</span>
-                <span class="skill-val">85%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">CSS3 &amp; Tailwind</span>
-                <span class="skill-val">95%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="skills-category glass-card">
-          <h3><i class="fa-solid fa-server"></i> Backend &amp; Databases</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Node.js (Express)</span>
+      <!-- TECHNICAL SKILLS MATRIX CARD -->
+      <section class="dash-card card-skills">
+        <div class="card-glow"></div>
+        <div class="layer-3d">
+          <h2><i class="fa-solid fa-gears"></i> <span data-i18n="sec-skills-title">Core Skills</span></h2>
+          <div class="skills-container">
+            <!-- Underlined Python + SQL Integration Skill -->
+            <div class="skill-bar-wrapper">
+              <div class="skill-meta">
+                <span class="skill-name skill-underline" data-i18n="skill-py-sql">Python &amp; SQL Integration</span>
                 <span class="skill-val">88%</span>
               </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
             </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><u>Integración de Python con SQL (PostgreSQL)</u></span>
+            
+            <div class="skill-bar-wrapper">
+              <div class="skill-meta">
+                <span class="skill-name" data-i18n="skill-fs">Full-Stack Dev (Next.js/Node)</span>
                 <span class="skill-val">85%</span>
               </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
             </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">MongoDB &amp; Redis</span>
-                <span class="skill-val">80%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
-            </div>
-          </div>
-        </div>
 
-        <!-- AI Integration & DevOps -->
-        <div class="skills-category glass-card">
-          <h3><i class="fa-solid fa-microchip"></i> IA &amp; DevOps</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Integración LLM (OpenAI / Gemini)</span>
-                <span class="skill-val">90%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">LangChain / VectorDBs</span>
+            <div class="skill-bar-wrapper">
+              <div class="skill-meta">
+                <span class="skill-name" data-i18n="skill-ai">LLMs &amp; VectorDBs Integration</span>
                 <span class="skill-val">82%</span>
               </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
             </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Docker &amp; Cloud (Vercel/AWS)</span>
-                <span class="skill-val">75%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO PROJECTS LIST CARD -->
+      <section class="dash-card card-projects" id="projects">
+        <div class="layer-3d">
+          <h2><i class="fa-solid fa-code"></i> <span data-i18n="sec-projects-title">Highlighted Projects</span></h2>
+          <div class="projects-holder">
+            <!-- Project 1: DocuMind AI -->
+            <div class="project-row">
+              <div class="p-icon"><i class="fa-solid fa-file-invoice"></i></div>
+              <div class="p-content">
+                <h3>DocuMind AI</h3>
+                <p data-i18n="p1-desc">
+                  Enterprise RAG (Retrieval-Augmented Generation) application connecting Python FastAPI with PostgreSQL to manage chat histories and documents.
+                </p>
+                <span class="p-tag underlined">Python &amp; SQL</span>
               </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+            </div>
+
+            <!-- Project 2: SaaS Chat AI Hub -->
+            <div class="project-row">
+              <div class="p-icon"><i class="fa-solid fa-robot"></i></div>
+              <div class="p-content">
+                <h3>SaaS Chat AI Hub</h3>
+                <p data-i18n="p2-desc">
+                  Multi-model AI SaaS console built on Next.js, managing OpenAI and Gemini APIs, with analytics stored in PostgreSQL.
+                </p>
+                <span class="p-tag">Next.js &amp; SQL</span>
+              </div>
+            </div>
+
+            <!-- Project 3: NeuroMarket -->
+            <div class="project-row">
+              <div class="p-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div class="p-content">
+                <h3>NeuroMarket</h3>
+                <p data-i18n="p3-desc">
+                  Predictive e-commerce recommendation system utilizing Python services integrated with caching layers and SQL queries.
+                </p>
+                <span class="p-tag underlined">Python &amp; SQL</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <div class="contact-header">
-          <div class="hero-badge" style="margin-bottom: 16px;">
-            <i class="fa-solid fa-envelope"></i> Conexión
+      <!-- AI CLONE CHATBOT AGENT CARD -->
+      <section class="dash-card card-chatbot">
+        <div class="chatbot-wrapper layer-3d">
+          <h2><i class="fa-solid fa-comment-dots"></i> <span data-i18n="sec-chatbot-title">Ignasi AI Assistant</span></h2>
+          
+          <!-- Chat Messages Container -->
+          <div class="chatbot-box" id="chat-body">
+            <!-- Messages render dynamically via JS -->
           </div>
-          <h3>¿Tienes un proyecto en mente?</h3>
-          <p>Escríbeme para colaborar juntos, integrar IA en tu startup o crear una experiencia digital robusta.</p>
+
+          <!-- Quick Suggestion Buttons -->
+          <div class="chat-suggestions">
+            <button class="sug-btn" data-i18n="sug-proj">Projects</button>
+            <button class="sug-btn" data-i18n="sug-stack">Tech Stack</button>
+            <button class="sug-btn" data-i18n="sug-contact">Contact Info</button>
+            <button class="sug-btn" data-i18n="sug-hire">Hire Me</button>
+          </div>
+
+          <!-- Message Input controls -->
+          <div class="chat-controls">
+            <input type="text" id="chat-input" placeholder="Ask me about Ignasi..." data-i18n="chat-placeholder" autocomplete="off" />
+            <button id="chat-send-btn" aria-label="Send message">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
         </div>
-        <div class="contact-methods">
-          <div class="contact-method-item">
-            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div class="c-text">
-              <div class="c-label">Correo electrónico</div>
-              <div class="c-value">ignasi.gimeno.dev@gmail.com</div>
+      </section>
+
+      <!-- RETRO UNIX TERMINAL COMMAND BOX CARD -->
+      <section class="dash-card card-terminal">
+        <div class="layer-3d">
+          <h2><i class="fa-solid fa-terminal"></i> <span data-i18n="sec-terminal-title">Interactive Terminal</span></h2>
+          
+          <!-- Terminal Box Emulator -->
+          <div class="terminal-box">
+            <div class="term-line" id="terminal-body" data-i18n="term-welcome">
+              Ignasi Gimeno Command Terminal (v2.0.0-stable)
+              Type 'help' to list available commands (e.g. 'skills', 'about', 'clear').
+            </div>
+            <div class="term-input-row">
+              <span class="term-prompt">guest@ignasi:~$</span>
+              <input type="text" id="terminal-input" placeholder="type command..." data-i18n="term-prompt-placeholder" autocomplete="off" />
             </div>
           </div>
-          <div class="contact-method-item">
-            <div class="c-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-            <div class="c-text">
-              <div class="c-label">Ubicación</div>
-              <div class="c-value">Remoto mundial (Huso horario UTC-3 / UTC+1)</div>
-            </div>
-          </div>
         </div>
-        
-        <div class="social-links">
-          <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-      </div>
+      </section>
 
-      <form class="contact-form glass-card" id="contact-form">
-        <div class="form-status" id="form-status"></div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" required placeholder="Tu nombre" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="Tu correo electrónico" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="subject">Asunto</label>
-          <input type="text" id="subject" required placeholder="Tema de conversación" />
-        </div>
-        <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea id="message" required placeholder="Describe tu idea o consulta..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">
-          Enviar Mensaje <i class="fa-solid fa-paper-plane" style="color: #05060e;"></i>
-        </button>
-      </form>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-container">
-      <div class="footer-text">
-        © 2026 Ignasi Gimeno. Todos los derechos reservados. Creado con <span>♥</span> en Barcelona.
-      </div>
-      <div class="footer-text">
-        Desplegado en Vercel
-      </div>
-    </div>
-  </footer>
+  </main>
 
   <script src="app.js"></script>
 </body>
