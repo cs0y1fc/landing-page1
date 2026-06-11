@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
   - <span class="terminal-prompt">clear</span>     : Limpiar la pantalla de la terminal.
   - <span class="terminal-prompt">secret</span>    : Revela un huevo de pascua especial.`,
     
-    about: `Hola, soy <span class="grad-text" style="font-weight:600">Carlos Mendoza</span>.
+    about: `Hola, soy <span class="grad-text" style="font-weight:600">Ignasi Gimeno</span>.
 Desarrollador Full-Stack con pasión por integrar soluciones de Inteligencia Artificial (LLMs, NLP, RAG, y agentes autónomos) en aplicaciones web del mundo real. 
-Creo productos eficientes, rápidos y con una experiencia de usuario sobresaliente.`,
+Especialista en la <u>integración de Python con bases de datos SQL relacionales</u> para procesamiento analítico de datos.`,
     
     skills: `Mi Stack Tecnológico:
   [Frontend] : React, Next.js, Vue, TailwindCSS, TypeScript
-  [Backend]  : Node.js, Express, Python (FastAPI/Django), PostgreSQL, Redis
+  [Backend]  : Node.js, Express, <u>Python + SQL (PostgreSQL) Integration</u>, Redis
   [AI/ML]    : OpenAI API, Gemini API, LangChain, RAG Vector Databases (Pinecone/Chroma)
   [DevOps]   : Docker, Vercel, AWS, Git & GitHub CI/CD`,
     
@@ -38,9 +38,9 @@ Creo productos eficientes, rápidos y con una experiencia de usuario sobresalien
   3. <span class="terminal-prompt">NeuroMarket</span> - E-commerce con recomendador inteligente de productos.`,
     
     contact: `Contacto & Enlaces:
-  - Email    : <span class="terminal-prompt">carlos.mendoza.dev@gmail.com</span>
-  - GitHub   : github.com/carlos-mendoza-dev
-  - LinkedIn : linkedin.com/in/carlos-mendoza-dev
+  - Email    : <span class="terminal-prompt">ignasi.gimeno.dev@gmail.com</span>
+  - GitHub   : github.com/ignasi-gimeno-dev
+  - LinkedIn : linkedin.com/in/ignasi-gimeno-dev
   - Estado   : Disponible para proyectos freelance y roles full-time.`,
     
     secret: ` █████╗ ███╗   ██╗████████╗██╗ ██████╗ ██████╗  █████╗ ██╗   ██╗██╗████████╗██╗   ██╗
@@ -103,13 +103,13 @@ Creo productos eficientes, rápidos y con una experiencia de usuario sobresalien
 
   // AI Knowledge Base
   const aiResponses = {
-    hola: "¡Hola! Soy el asistente virtual de Carlos. Estoy especializado en responder preguntas sobre su carrera y habilidades. ¿De qué te gustaría hablar hoy?",
-    presentacion: "¡Hola! Soy el asistente virtual de Carlos. Estoy aquí para contarte sobre su stack de Full-stack, sus integraciones con Inteligencia Artificial, sus proyectos anteriores, o cómo puedes contactarlo. ¿En qué puedo ayudarte?",
-    proyectos: "Carlos ha trabajado en diversos proyectos de IA y desarrollo web. Destacan: <br>• <strong>DocuMind AI</strong> (Sistema de RAG que procesa PDFs y responde dudas analíticas usando embeddings).<br>• <strong>Multi-model AI Chatbot</strong> (Una plataforma SaaS que conecta con Claude, GPT y Gemini en un solo dashboard).<br>• <strong>NeuroMarket</strong> (Un e-commerce inteligente con análisis de sentimientos y recomendaciones).<br>¿Te gustaría ver alguno en detalle?",
-    stack: "El stack principal de Carlos incluye:<br>• <strong>Frontend:</strong> React, Next.js, TypeScript y TailwindCSS para interfaces ultrarrápidas.<br>• <strong>Backend:</strong> Node.js, FastAPI (Python), y PostgreSQL.<br>• <strong>IA Integración:</strong> LangChain, VectorDBs (Pinecone, Chroma), APIs de OpenAI y Gemini.<br>Es un stack moderno enfocado en la agilidad y las experiencias ricas.",
-    contacto: "Puedes contactar a Carlos mediante el formulario al final de la página o directamente a través de:<br>• <strong>Email:</strong> carlos.mendoza.dev@gmail.com<br>• <strong>LinkedIn:</strong> linkedin.com/in/carlos-mendoza-dev<br>Escríbele y te responderá en menos de 24 horas.",
-    contratar: "¡Excelente decisión! Carlos está disponible para integrarse a equipos dinámicos en modalidad remoto, proyectos freelance exigentes o consultoría especializada en integración de IA. Puedes enviarle un mensaje en la sección de contacto o escribirle directamente a: <strong>carlos.mendoza.dev@gmail.com</strong>.",
-    defecto: "Entiendo. Carlos tiene experiencia implementando agentes autónomos, integrando APIs de modelos de lenguaje (LLMs) y optimizando bases de datos vectoriales. Si tienes una consulta específica, cuéntame o selecciona una de las respuestas rápidas."
+    hola: "¡Hola! Soy el asistente virtual de Ignasi. Estoy especializado en responder preguntas sobre su carrera y habilidades. ¿De qué te gustaría hablar hoy?",
+    presentacion: "¡Hola! Soy el asistente virtual de Ignasi. Estoy aquí para contarte sobre su stack de Full-stack, sus integraciones con Inteligencia Artificial, sus proyectos anteriores o cómo puedes contactarlo. ¿En qué puedo ayudarte?",
+    proyectos: "Ignasi ha trabajado en diversos proyectos de IA y desarrollo web. Destacan: <br>• <strong>DocuMind AI</strong> (RAG que procesa PDFs con backend Python e <u>integración SQL relacional</u> para historiales).<br>• <strong>SaaS Chat AI Hub</strong> (Una plataforma multi-modelo en Next.js con base de datos PostgreSQL).<br>• <strong>NeuroMarket</strong> (E-commerce inteligente con recomendador predictivo en Python y Redis).<br>¿Te gustaría ver alguno en detalle?",
+    stack: "El stack principal de Ignasi incluye:<br>• <strong>Frontend:</strong> React, Next.js, TypeScript y TailwindCSS para interfaces ultrarrápidas.<br>• <strong>Backend & BD:</strong> Node.js, y una fuerte <u>integración de Python con bases de datos SQL (PostgreSQL)</u>.<br>• <strong>IA Integración:</strong> LangChain, VectorDBs (Pinecone, Chroma), APIs de OpenAI y Gemini.<br>Es un stack moderno y enfocado en analítica y automatizaciones.",
+    contacto: "Puedes contactar a Ignasi mediante el formulario al final de la página o directamente a través de:<br>• <strong>Email:</strong> ignasi.gimeno.dev@gmail.com<br>• <strong>LinkedIn:</strong> linkedin.com/in/ignasi-gimeno-dev<br>Escríbele y te responderá en menos de 24 horas.",
+    contratar: "¡Excelente decisión! Ignasi está disponible para integrarse a equipos en modal remoto, proyectos freelance exigentes o consultoría en IA y bases de datos. Puedes enviarle un mensaje en el formulario o escribirle a: <strong>ignasi.gimeno.dev@gmail.com</strong>.",
+    defecto: "Entiendo. Ignasi tiene experiencia en la <u>integración de Python con SQL</u>, desarrollo con LLMs y optimización de bases de datos vectoriales. Si tienes una consulta específica, cuéntame o selecciona una de las respuestas rápidas."
   };
 
   function getAIMessage(text) {
@@ -296,7 +296,7 @@ Creo productos eficientes, rápidos y con una experiencia de usuario sobresalien
         submitBtn.innerHTML = originalBtnText;
 
         formStatus.className = 'form-status success';
-        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Carlos se pondrá en contacto contigo muy pronto.';
+        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Ignasi se pondrá en contacto contigo muy pronto.';
         formStatus.style.display = 'block';
 
         contactForm.reset();
