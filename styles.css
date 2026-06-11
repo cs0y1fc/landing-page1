@@ -1,38 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 /* ═══════════════════════════════════════════════════════
-   THEME SYSTEM — White & Green (Default: Light)
+   THEME SYSTEM — Orange, White & Gray (Default: Light)
    ═══════════════════════════════════════════════════════ */
 :root {
-  --bg: #f0fdf4;
-  --text: #064e3b;
-  --text-muted: #4b5563;
+  --bg: #fafafa;
+  --text: #27272a;
+  --text-muted: #52525b;
   --text-dark: #9ca3af;
-  --card-bg: rgba(255, 255, 255, 0.6);
-  --border: rgba(16, 185, 129, 0.12);
-  --border-hover: rgba(16, 185, 129, 0.45);
-  --primary: #10b981;
-  --primary-rgb: 16, 185, 129;
-  --secondary: #059669;
-  --secondary-rgb: 5, 150, 105;
-  --glow: rgba(16, 185, 129, 0.15);
-  --shadow: 0 8px 32px rgba(16, 185, 129, 0.08), 0 2px 16px rgba(0, 0, 0, 0.04);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border: rgba(249, 115, 22, 0.12);
+  --border-hover: rgba(249, 115, 22, 0.45);
+  --primary: #f97316;
+  --primary-rgb: 249, 115, 22;
+  --secondary: #ea580c;
+  --secondary-rgb: 234, 88, 12;
+  --glow: rgba(249, 115, 22, 0.15);
+  --shadow: 0 8px 32px rgba(249, 115, 22, 0.08), 0 2px 16px rgba(0, 0, 0, 0.04);
   --grid-gap: 20px;
 }
 
 [data-theme="dark"] {
-  --bg: #021a13;
-  --text: #ecfdf5;
-  --text-muted: #a7f3d0;
-  --text-dark: #6ee7b7;
-  --card-bg: rgba(6, 78, 59, 0.3);
+  --bg: #1c1917;
+  --text: #fafaf9;
+  --text-muted: #d6d3d1;
+  --text-dark: #a8a29e;
+  --card-bg: rgba(41, 37, 36, 0.45);
   --border: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(52, 211, 153, 0.45);
-  --primary: #34d399;
-  --primary-rgb: 52, 211, 153;
-  --secondary: #6ee7b7;
-  --secondary-rgb: 110, 231, 183;
-  --glow: rgba(52, 211, 153, 0.2);
+  --border-hover: rgba(251, 146, 60, 0.45);
+  --primary: #fb923c;
+  --primary-rgb: 251, 146, 60;
+  --secondary: #fdba74;
+  --secondary-rgb: 253, 186, 116;
+  --glow: rgba(251, 146, 60, 0.2);
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -101,7 +101,7 @@ body::before {
 /* ═══════════════════════════════════════════════════════
    CUSTOM CURSOR
    ═══════════════════════════════════════════════════════ */
-.custom-cursor-dot, .custom-cursor-ring {
+.custom-cursor-dot {
   position: fixed;
   top: 0;
   left: 0;
@@ -121,31 +121,17 @@ body::before {
   background-color: var(--primary);
   box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.6), 0 0 4px rgba(var(--primary-rgb), 0.9);
 }
-.custom-cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(var(--primary-rgb), 0.3);
-  background: transparent;
-}
-
 /* Cursor hover expansion */
-body.cursor-hover .custom-cursor-ring {
-  width: 54px;
-  height: 54px;
-  background-color: rgba(var(--primary-rgb), 0.08);
-  border-color: rgba(var(--primary-rgb), 0.6);
+body.cursor-hover .custom-cursor-dot {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(var(--primary-rgb), 0.85);
 }
 
 /* Cursor click shrink */
 body.cursor-click .custom-cursor-dot {
   width: 4px;
   height: 4px;
-}
-body.cursor-click .custom-cursor-ring {
-  width: 28px;
-  height: 28px;
-  border-width: 3px;
-  border-color: var(--primary);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -161,14 +147,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(240, 253, 244, 0.7);
+  background: rgba(250, 250, 250, 0.7);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border);
   transition: background 0.5s ease, border-color 0.3s ease;
 }
 [data-theme="dark"] header {
-  background: rgba(2, 26, 19, 0.75);
+  background: rgba(28, 25, 23, 0.75);
 }
 
 .logo {
@@ -820,7 +806,7 @@ header {
 }
 [data-theme="dark"] .terminal-box {
   background: rgba(0, 0, 0, 0.3);
-  color: #34d399;
+  color: #fb923c;
 }
 .term-line {
   line-height: 1.5;
@@ -1043,7 +1029,7 @@ header {
   body {
     cursor: auto;
   }
-  .custom-cursor-dot, .custom-cursor-ring {
+  .custom-cursor-dot {
     display: none;
   }
 }
@@ -1052,7 +1038,7 @@ header {
   body {
     cursor: auto;
   }
-  .custom-cursor-dot, .custom-cursor-ring {
+  .custom-cursor-dot {
     display: none;
   }
 }

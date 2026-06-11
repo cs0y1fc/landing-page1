@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    const colors = ['#10b981', '#34d399', '#059669'];
+    const colors = ['#f97316', '#fb923c', '#ea580c'];
 
     let mouse = {
       x: null,
@@ -187,9 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
             opacityValue = 1 - distance / 110;
             // Line color is derived from CSS theme variables dynamically
             const lineOpacity = opacityValue * (currentTheme === 'dark' ? 0.15 : 0.1);
-            ctx.strokeStyle = currentTheme === 'dark' 
-              ? `rgba(52, 211, 153, ${lineOpacity})` 
-              : `rgba(16, 185, 129, ${lineOpacity})`;
+            ctx.strokeStyle = currentTheme === 'dark'
+              ? `rgba(251, 146, 60, ${lineOpacity})`
+              : `rgba(249, 115, 22, ${lineOpacity})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -213,36 +213,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', initParticles);
   }
 
-  // --- CUSTOM TRAIL CURSOR ---
+  // --- CUSTOM CURSOR DOT ---
   const cursorDot = document.querySelector('.custom-cursor-dot');
-  const cursorRing = document.querySelector('.custom-cursor-ring');
-  
-  if (cursorDot && cursorRing && !prefersReducedMotion) {
-    let mouseX = 0;
-    let mouseY = 0;
-    let ringX = 0;
-    let ringY = 0;
 
+  if (cursorDot && !prefersReducedMotion) {
     window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
       // Dot follows cursor coordinates directly
-      cursorDot.style.left = `${mouseX}px`;
-      cursorDot.style.top = `${mouseY}px`;
+      cursorDot.style.left = `${e.clientX}px`;
+      cursorDot.style.top = `${e.clientY}px`;
     });
-
-    // Inertial LERP tracking loop for the cursor ring
-    function updateCursorRing() {
-      const ease = 0.16; // lag weight
-      ringX += (mouseX - ringX) * ease;
-      ringY += (mouseY - ringY) * ease;
-
-      cursorRing.style.left = `${ringX}px`;
-      cursorRing.style.top = `${ringY}px`;
-
-      requestAnimationFrame(updateCursorRing);
-    }
-    updateCursorRing();
 
     // Hover effect expansions
     const interactiveElements = document.querySelectorAll('a, button, input, textarea, .qr-btn, .sug-btn');
