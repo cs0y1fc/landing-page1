@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    const colors = ['#f97316', '#fb923c', '#ea580c'];
+    const colors = ['#1e3a8a', '#2563eb', '#3b82f6'];
 
     let mouse = {
       x: null,
@@ -188,8 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Line color is derived from CSS theme variables dynamically
             const lineOpacity = opacityValue * (currentTheme === 'dark' ? 0.15 : 0.1);
             ctx.strokeStyle = currentTheme === 'dark'
-              ? `rgba(251, 146, 60, ${lineOpacity})`
-              : `rgba(249, 115, 22, ${lineOpacity})`;
+              ? `rgba(96, 165, 250, ${lineOpacity})`
+              : `rgba(30, 58, 138, ${lineOpacity})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
