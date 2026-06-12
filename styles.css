@@ -244,6 +244,14 @@ header {
   justify-content: center;
 }
 
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
